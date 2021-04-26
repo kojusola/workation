@@ -17,18 +17,18 @@
       </button>
       </div>
   </div>
-        <nav class="sm-block" :class="{'hidden':!isOpen, 'block': isOpen}">
-        <div class="px-2 pb-5 sm:pb-0 sm:pt-0 pt-2 font-semibold border-b border-gray-300 sm:flex sm:border-b-0 sm:text-sm">
+        <nav class="sm:flex sm:items-center sm:pr-4" :class="{'hidden':!isOpen, 'block': isOpen}">
+        <div class="px-2 pb-5 sm:pb-0 sm:pt-0 pt-2 font-semibold border-b border-gray-300 sm:flex sm:border-b-0 sm:text-sm sm:px-0">
           <a href="#" class="block px-3 py-1 hover:bg-gray-200 sm:px-2">List your property</a>
           <a href="#" class="block  mt-1 sm:mt-0 px-3 py-1 hover:bg-gray-200 sm:px-2 sm:ml-2">Trips</a>
           <a href="#" class="block  mt-1 sm:mt-0 px-3 py-1 hover:bg-gray-200 sm:px-2 sm:ml-2">Messages</a>
         </div>
-        <div class="px-5 py-5 sm:hidden">
+        <div class="px-5 py-5 sm:py-0 sm:px-0 sm:ml-4">
           <div class="flex item-center">
-            <img  class="h-10 w-10 object-cover rounded-full border-2 border-gray-400" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="">
-            <span class=" ml-4 text-gray-700 font-semibold">Fafemi Adeola</span>
+            <img  class="h-10 w-10 object-cover rounded-full border-2 border-gray-400 sm:h-8 sm:w-8" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="">
+            <span class=" ml-4 text-gray-700 font-semibold sm:hidden ">Fafemi Adeola</span>
           </div>
-          <div class="mt-5">
+          <div class="mt-5 sm:hidden">
             <a href="#" class=" block text-gray-800 hover:text-black">Account settings</a>
             <a href="#" class="mt-3 block text-gray-800 hover:text-black">Support</a>
             <a href="#" class="mt-3 block text-gray-800 hover:text-black">Sign out</a>
