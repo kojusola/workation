@@ -1,8 +1,9 @@
 <template>
-  <div id="app" class="min-h-screen bg-gray-200 antialiased">
-    <SiteHeader/>
+  <div id="app" class="min-h-screen bg-gray-200 antialiased xl:flex  xl:flex-col xl:h-screen">
+    <SiteHeader class="xl:flex-shrink-0"/>
+    <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
     <SearchFilters/>
-    <main class=" py-6">
+    <main class="xl:flex-1 py-6">
       <div class="px-4">
         <h3 class="text-gray-900 text-xl">Los Angeles</h3>
         <p class="text-gray-600">Live like the stars in these luxurious Southern California estates</p>
@@ -178,7 +179,7 @@
       </div>
      </div>
     </main>
-
+    </div>
   </div>
 </template>
 
