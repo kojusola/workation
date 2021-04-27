@@ -3,7 +3,7 @@
     <SiteHeader class="xl:flex-shrink-0"/>
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
     <SearchFilters/>
-    <main class="xl:flex-1 py-6">
+    <main class="xl:flex-1 py-6 xl:z-0">
       <div class="px-4">
         <h3 class="text-gray-900 text-xl">Los Angeles</h3>
         <p class="text-gray-600">Live like the stars in these luxurious Southern California estates</p>
@@ -135,8 +135,8 @@
           </div>
         </div>
       </div>
-       <div class="mt-5 px-4 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2">
-        <div class="sm:max-w-xs sm:w-full sm:flex-shrink-0 ">
+       <div class=" xl:z-0 mt-5 px-4 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2">
+        <div class="sm:max-w-xs sm:w-full sm:flex-shrink-0">
           <div class="relative pb-5/6">
              <img class="absolute inset-0 rounded-lg shadow-md h-full object-cover" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
           </div>

@@ -33,15 +33,23 @@
           <a href="#" class="block  mt-1 sm:mt-0 px-3 py-1 hover:bg-gray-200 sm:px-2 sm:ml-2">Trips</a>
           <a href="#" class="block  mt-1 sm:mt-0 px-3 py-1 hover:bg-gray-200 sm:px-2 sm:ml-2">Messages</a>
         </div>
-        <div class="px-5 py-5 sm:py-0 sm:px-0 sm:ml-4">
-          <div class="flex item-center">
-            <img  class="h-10 w-10 object-cover rounded-full border-2 border-gray-400 sm:h-8 sm:w-8" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="">
+        <div class="relative px-5 py-5 sm:py-0 sm:px-0 sm:ml-4">
+          <div class="flex item-center sm:hidden">
+            <img  class="h-10 w-10 object-cover rounded-full border-2 border-gray-400 sm:h-8 sm:w-8 xl:border-gray-300" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="">
             <span class=" ml-4 text-gray-700 font-semibold sm:hidden xl:border-gray-300">Fafemi Adeola</span>
           </div>
-          <div class="mt-5 sm:hidden">
-            <a href="#" class=" block text-gray-800 hover:text-black">Account settings</a>
-            <a href="#" class="mt-3 block text-gray-800 hover:text-black">Support</a>
-            <a href="#" class="mt-3 block text-gray-800 hover:text-black">Sign out</a>
+          <button @click="toggleDropdown" type="button" :class="[dropdownOpen ? 'sm:border-gray-700' : 'sm:border-gray-400']" class="hidden sm:block sm:h-8 sm:w-8 sm:focus:outline-none sm:focus:border-gray-700 sm:overflow-hidden sm:rounded-full sm:border-2 sm:border-gray-400 xl:border-gray-300">
+             <img  class="h-full w-full object-cover sm:rounded-full" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="">
+          </button>
+          <div :class="dropdownOpen ? 'sm:block': 'sm:hidden'" class="xl:z-50">
+            <button @click="dropdownOpen = false" class=" hidden sm:block sm:fixed sm:opacity-0 sm:inset-0 sm:h-full sm:w-full sm:cursor-default"></button>
+          <div 
+          class="mt-5 sm:rounded-lg sm:bg-white sm:absolute sm:right-0 sm:w-48 sm:mt-3 sm:py-2 sm:shadow-xl xl:z-50">
+            <a href="#" class=" block text-gray-800 hover:text-black sm:text-gray-800 sm:px-4 sm:py-2 sm:hover:bg-indigo-500">Account settings</a>
+            <a href="#" class="mt-3 block text-gray-800 hover:text-black sm:text-gray-800 sm:mt-0 sm:px-4 sm:py-2 sm:hover:bg-indigo-500">Support</a>
+            <a href="#" class="mt-3 block text-gray-800 hover:text-black sm:text-gray-800 sm:mt-0 sm:px-4 sm:py-2 sm:hover:bg-indigo-500">Sign out</a>
+          </div>
+
           </div>
         </div>
        </div>
@@ -53,12 +61,28 @@
 export default {
     data (){
         return{
-            isOpen:false
+            isOpen:false,
+            dropdownOpen:false
         }
+    },
+    mounted() {
+      const onEscape =(e)=>{
+        if (!this.dropdownOpen || e.key !== "Escape"){
+          return
+        }
+        this.dropdownOpen = false
+      }
+      document.addEventListener('keydown', onEscape)
+      this.$on('hook:destroyed', ()=>{
+        document.removeEventListener('keydown', onEscape)
+      })
     },
     methods: {
         toggle(){
             this.isOpen = !this.isOpen
+        },
+        toggleDropdown(){
+            this.dropdownOpen = !this.dropdownOpen
         }
     }
 }
