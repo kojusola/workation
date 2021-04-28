@@ -8,8 +8,8 @@
         <h3 class="text-gray-900 text-xl">Los Angeles</h3>
         <p class="text-gray-600">Live like the stars in these luxurious Southern California estates</p>
       </div>
-     <div class="sm:flex  sm:overflow-x-auto sm:pl-1 sm:pr-6">
-      <div class="mt-5 sm:max-w-xs sm:w-full sm:flex-shrink-0 px-4">
+     <div class="sm:flex  sm:overflow-x-auto sm:pl-1 sm:pr-6 sm:pb-4">
+      <div class="mt-5 sm:max-w-xs sm:w-full sm:flex-shrink-0 px-4 sm:px-2">
         <div class="sm:max-w-xs sm:w-full sm:flex-shrink-0">
           <div class="relative pb-5/6">
              <img class="absolute inset-0 rounded-lg shadow-md h-full object-cover" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
